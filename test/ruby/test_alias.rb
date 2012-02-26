@@ -104,4 +104,17 @@ class TestAlias < Test::Unit::TestCase
     end
     assert_equal(:ok, d.new.bar)
   end
+
+  def test_alias_with_comma
+    feature6074 = '[ruby-core:42857]'
+    c = Class.new do
+      def foo
+        :ok
+      end
+    end
+    assert_nothing_raised(SyntaxError, feature6074) do
+      c.class_eval("alias bar, foo")
+    end
+    assert_equal(:ok, c.new.bar, feature6074)
+  end
 end

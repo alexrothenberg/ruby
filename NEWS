@@ -68,6 +68,10 @@ with all sufficient information, see the ChangeLog file.
   * Added support for the new deflate strategies Zlib::RLE and Zlib::FIXED.
 
 === Language changes
+
+* alias
+  * Now optional comma between alias arguments is allowed.
+
 === Compatibility issues (excluding feature bug fixes)
 
   * Signal.trap
